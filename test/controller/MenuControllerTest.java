@@ -29,7 +29,7 @@ public class MenuControllerTest  {
     Map<String, Object> modelMap;
 
     @Mock
-    Menu KololoCourts;
+    Menu menu;
     @Mock
     Menu menuType;
     @Mock
@@ -49,7 +49,7 @@ public class MenuControllerTest  {
         String viewName = menuController.renderMenu(modelMap);
         System.out.print(modelMap.values());
 
-        assertThat((Menu)modelMap.get("MyRestaurant"),is(KololoCourts));
+        assertThat((Menu)modelMap.get("MyRestaurant"),is(menu));
         assertThat(viewName,is("PandaSpark"));
     }
 

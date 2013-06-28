@@ -22,14 +22,14 @@ public class MenuController {
     @Autowired
     ServletContext servletContext;
 
-    Menu restaurantName = new Menu("KololoCourts");
+    Menu restaurantName = new Menu("Kololo Courts");
 
     //Menu categories ...
-    Menu menuType  = new Menu("Main Course");
-    Menu menuType1 = new Menu("Starter");
+    //Menu menuType  = new Menu("Main Course");
+    //Menu menuType1 = new Menu("Starter");
     Menu menuType2 = new Menu("Sweets");
 
-    @RequestMapping(value="/", method= RequestMethod.GET)
+    @RequestMapping(value="/name", method= RequestMethod.GET)
 	String renderMenu(Map<String, Object> model){
 		model.put("MyRestaurant",restaurantName);
 		return "PandaSpark";
@@ -37,7 +37,7 @@ public class MenuController {
 
     @RequestMapping(value = "/mainCourse", method = RequestMethod.GET)
     public String renderMenuItem(ModelMap model) {
-        model.put("menuType",menuType);
+       // model.put("menuType",menuType);
         model.addAttribute("menuItem","Fried Beef");
         model.addAttribute("price", "UGX 10000");
         return "PandaSpark";
@@ -45,7 +45,7 @@ public class MenuController {
 
     @RequestMapping(value = "/starter", method = RequestMethod.GET)
     public String renderMenuItem1(ModelMap model) {
-        model.put("menuType",menuType1);
+        //model.put("menuType",menuType1);
         model.addAttribute("menuItem","Mushroom soup");
         model.addAttribute("price", "UGX 15000");
         return "PandaSpark";
@@ -53,8 +53,8 @@ public class MenuController {
 
     @RequestMapping(value = "/sweets", method = RequestMethod.GET)
     public String renderMenuItem2(ModelMap model) {
-        model.put("menuType",menuType2);
-        model.addAttribute("menuItem","Ice Cream");
+        //model.put("menuType",menuType2);
+        model.addAttribute("menuItem","Swt Ice Cream");
         model.addAttribute("price", "UGX 6000");
         return "PandaSpark";
     }
